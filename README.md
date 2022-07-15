@@ -2,7 +2,8 @@
 
 ### Email features:
 * Dark mode
-* Responsive design for all devices
+* Banner section with GIF background
+* Responsive design leveraging inline CSS and media queries
 * HTML conditional statements / Ghost tables
 * Compatible with over 82 email clients
-* roles for accessibility
+* Roles for accessibility

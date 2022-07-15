@@ -4,8 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="color-scheme" content="light dark">
-    <meta name="supported-color-schemes" content="light dark"> -->
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
         <title>HTML Email Template Boilerplate</title>
     <style type="text/css">
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
@@ -21,19 +21,68 @@
         img {
             border: 0;
         }
+        a {
+            color: #f5e8fb;
+            text-decoration: none;
+        }
         
 
         @media screen and (max-width: 599.98px) {
-
+            .two-columns .padding,
+            .two-third-columns .padding,
+            .three-columns .padding {
+                padding-right: 0!important;
+                padding-left: 0!important;
+            }
+            img.two-col-img {
+                width: 300px!important;
+                max-width: 300px!important;
+            }
+            .two-third-columns .padding.first {
+                padding-bottom: 0!important;
+            }
+            .two-third-columns .padding.last {
+                padding-top: 0!important;
+            }
+            img.one-third-col-img,
+            img.three-col-img-last {
+                width: 200px!important;
+                max-width: 200px!important;
+            }
+            .two-third-columns .content {
+                text-align: center!important;
+            }
+            .banner {
+                height: auto!important;
+                padding-top: 40px!important;
+                padding-bottom: 60px!important;
+            }
         }
         @media screen and (max-width: 399.98px) {
-        
+            img.three-col-img {
+                width: 200px!important;
+                max-width: 200px!important;
+            }
+            .banner {
+                padding-top: 10px!important;
+                padding-bottom: 40px!important;
+            }
         }
 
         /* Custom Dark Mode Colors */
+        :root {
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
+        }
         
         @media (prefers-color-scheme: dark) {
-            
+            body, center, table {
+                background-color: #2d2d2d!important;
+                color: #ffffff;
+            }
+            .darkmode-transparent {
+                background-color: transparent!important;
+            }
         }
     </style>
 
@@ -79,13 +128,13 @@
     <!-- START SOCIAL ICONS -->
                 <tr>
                     <td style="padding:0;">
-                        <table width="100%" style="border-spacing: 0;" role="presentation">
+                        <table width="100%" style="border-spacing: 0;background-color: #f1ebfa;" role="presentation">
 
                             <tr>
                                 <td height="3" style="background-color: #b15adc;"></td>
                             </tr>
                             <tr>
-                                <td style="background-color: #f1ebfa;text-align: center;padding:10px 0 8px 0;">
+                                <td style="text-align: center;padding:10px 0 8px 0;">
                                 
                                     <a href="https://example.com" target="_blank"><img src="https://i.ibb.co/bPLzh61/circle-facebook.png" alt="Facebook" title="Facebook" width="32" border="0"></a>
                                     <a href="https://example.com" target="_blank"><img src="https://i.ibb.co/sRH7TK2/circle-twitter.png" alt="Twitter" title="Twitter" width="32" border="0"></a>
@@ -107,10 +156,10 @@
     <!-- Start LOGO-->
                 <tr>
                     <td style="padding:0;">
-                        <table width="100%" style="border-spacing: 0;" role="presentation">
+                        <table width="100%" style="border-spacing: 0;background-color: #fafdfe;" role="presentation">
 
                             <tr>
-                                <td style="background-color: #fafdfe;padding: 20px 0 20px 0;text-align: center;">
+                                <td style="padding: 20px 0 20px 0;text-align: center;">
                                 <a href="https://example.com"><img src="https://via.placeholder.com/751x121" alt="Logo" width="280" border="0"></a>
                                 </td>
                             </tr>
@@ -123,7 +172,7 @@
 
     <!-- START BANNER -->
                 <tr>
-                    <td background="https://i.pinimg.com/originals/33/e2/eb/33e2eb013d11edd6b0b3f6fc284e82e8.gif" width="600" height="400" style="background-position: center top;">
+                    <td class="banner" background="https://i.pinimg.com/originals/33/e2/eb/33e2eb013d11edd6b0b3f6fc284e82e8.gif" width="600" height="400" style="background-position: center top;">
 
                         <!--[if (gte mso 9)|(IE)]>
                             <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:332px;">
@@ -163,7 +212,7 @@
                                                 <table class="darkmode-transparent" cellpadding="0" cellspacing="0" role="presentation">
                                                     <tr>
                                                         <td style="border-radius: 10px;" bgcolor="#eff8fe">
-                                                            <a href="https://example.com" target="_blank" style="font-size: 17px;font-weight:bold;text-decoration:none;color:#4d22a2;background-color: #eff8fe;border:1px solid #eff8fe;border-radius: 10px;padding: 12px 20px;display:inline-block;">VIEW DEMO</a>
+                                                            <a href="https://example.com" target="_blank" style="font-size: 17px;font-weight:bold;text-decoration:none;color:#4d22a2;background-color: #eff8fe;border:1px solid #eff8fe;border-radius: 10px;padding: 12px 20px;display:inline-block;">EXAMPLE BTN</a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -204,12 +253,12 @@
                                         <table class="content" style="border-spacing: 0;text-align:left;" role="presentation">
                                             <tr>
                                                 <td>
-                                                <a href="https://example.com"><img src="https://via.placeholder.com/380x280" alt="Placeholder" width="260" style="max-width: 260px;border-radius:8px;" border="0"></a>
+                                                <a href="https://example.com"><img class="two-col-img" src="https://via.placeholder.com/380x280" alt="Placeholder" width="260" style="max-width: 260px;border-radius:8px;" border="0"></a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="padding:10px 10px 20px 10px;">
-                                                    <p style="font: 17px;font-weight:bold;line-height: 20px;">Lorem, ipsum dolor.</p>
+                                                    <p style="font: 17px;font-weight:bold;line-height: 25px;">Lorem, ipsum dolor.</p>
                                                     <p style="font-size:15px;line-height: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sapiente adipisci non nemo!</p>
                                                 </td>
                                             </tr>
@@ -244,12 +293,12 @@
                                         <table class="content" style="border-spacing: 0;text-align:left;" role="presentation">
                                             <tr>
                                                 <td>
-                                                <a href="https://example.com"><img src="https://via.placeholder.com/380x280" alt="Placeholder" width="260" style="max-width: 260px;border-radius:8px;" border="0"></a>
+                                                <a href="https://example.com"><img class="two-col-img" src="https://via.placeholder.com/380x280" alt="Placeholder" width="260" style="max-width: 260px;border-radius:8px;" border="0"></a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="padding:10px 10px 20px 10px;">
-                                                    <p style="font: 17px;font-weight:bold;line-height: 20px;">Lorem, ipsum dolor.</p>
+                                                    <p style="font: 17px;font-weight:bold;line-height: 25px;">Lorem, ipsum dolor.</p>
                                                     <p style="font-size:15px;line-height: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sapiente adipisci non nemo!</p>
                                                 </td>
                                             </tr>
@@ -302,10 +351,10 @@
                                 <tr>
                                     <td class="padding first" style="padding: 15px 20px 15px 20px;background-color: #4d22a2;">
                                     
-                                        <table class="content" style="border-spacing: 0;text-align:center;" role="presentation">
+                                        <table class="content darkmode-transparent" style="border-spacing: 0;text-align:center;" role="presentation">
                                             <tr>
                                                 <td style="background-color: #4d22a2;">
-                                                <a href="https://example.com"><img src="https://via.placeholder.com/400x400" alt="Placeholder" width="160" style="max-width: 160px;border-radius:100px ;" border="0"></a>
+                                                <a href="https://example.com"><img class="one-third-col-img" src="https://via.placeholder.com/400x400" alt="Placeholder" width="160" style="max-width: 160px;border-radius:100px ;" border="0"></a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -328,8 +377,8 @@
                                         <table class="content" style="border-spacing: 0;text-align:left;" role="presentation">
                                             <tr>
                                                 <td style="vertical-align: middle;background-color: #4d22a2;padding: 0 10px 0 10px;">
-                                                    <p style="font-size:20px;color:#ffffff;letter-spacing: .2px;font-weight: 300;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat expedita aliquam dolore porro fugiat modi cum.</p>
-                                                    <p style="font-size:18px;color:#ffffff;letter-spacing: .2px;font-weight: 300;">-Lorem ipsum</p>
+                                                    <p style="font-size:20px;color:#ffffff;letter-spacing: .2px;font-weight: 300;line-height: 20px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat expedita aliquam dolore porro fugiat modi cum.</p>
+                                                    <p style="font-size:18px;color:#ffffff;letter-spacing: .2px;font-weight: 300;line-height: 20px;">-Lorem ipsum</p>
                                                 </td>
                                             </tr>
                                         </table>
@@ -352,7 +401,7 @@
 
     <!-- START THREE COLUMNS -->
                 <tr>
-                    <td style="padding:0;">
+                    <td style="padding:30px 0 40px 0;">
                     <table width="100%" style="border-spacing: 0;" role="presentation">
                         <tr>
                             <td class="three-columns" style="padding: 0;font-size: 0;text-align:center;">
@@ -364,7 +413,38 @@
                             <![endif]-->
 
                             <table class="column" style="border-spacing: 0;vertical-align:top;width:100%;max-width:200px;display:inline-block;" role="presentation">
-                                
+                                <tr>
+                                    <td class="padding" style="padding: 15px;">
+                                    
+                                        <table class="content" style="border-spacing: 0;text-align:center;" role="presentation">
+                                            <tr>
+                                                <td>
+                                                    <a href="https://example.com"><img class="three-col-img" src="https://via.placeholder.com/380x280" alt="Placeholder" width="150" style="max-width: 150px;border-radius: 5px;" border="0"></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 10px 10px 20px 10px;">
+                                                    <p style="font-size: 17px;font-weight:bold;line-height: 20px;">LOREM</p>
+                                                    <p style="font-size: 15px;line-height: 20px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, porro dolorum! Incidunt, nulla?</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <table align="center" border="0" cellpadding="0" style="border-spacing: 0;" role="presentation">
+                                                        <tr>
+
+                                                            <td style="border-radius: 10px;" bgcolor="#eff8fe">
+                                                                <a href="https://example.com" target="_blank" style="font-size: 15px;font-weight:bold;text-decoration:none;color:#4d22a2;background-color: #dde0e1;border:1px solid #dde0e1;border-radius: 10px;padding: 8px 20px;display:inline-block;">Example</a>
+                                                            </td>
+
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
                             </table>
 
                             <!--[if (gte mso 9)|(IE)]>
@@ -373,7 +453,38 @@
                             <![endif]-->
 
                             <table class="column" style="border-spacing: 0;vertical-align:top;width:100%;max-width:200px;display:inline-block;" role="presentation">
-                                
+                                <tr>
+                                    <td class="padding" style="padding: 15px;">
+                                    
+                                        <table class="content" style="border-spacing: 0;text-align:center;" role="presentation">
+                                            <tr>
+                                                <td>
+                                                    <a href="https://example.com"><img class="three-col-img" src="https://via.placeholder.com/380x280" alt="Placeholder" width="150" style="max-width: 150px;border-radius: 5px;" border="0"></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 10px 10px 20px 10px;">
+                                                    <p style="font-size: 17px;font-weight:bold;line-height: 20px;">LOREM</p>
+                                                    <p style="font-size: 15px;line-height: 20px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, porro dolorum! Incidunt, nulla?</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <table align="center" border="0" cellpadding="0" style="border-spacing: 0;" role="presentation">
+                                                        <tr>
+
+                                                            <td style="border-radius: 10px;" bgcolor="#eff8fe">
+                                                                <a href="https://example.com" target="_blank" style="font-size: 15px;font-weight:bold;text-decoration:none;color:#ffffff;background-color: #4d22a2;border:1px solid #4d22a2;border-radius: 10px;padding: 8px 20px;display:inline-block;">Example</a>
+                                                            </td>
+
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
                             </table>
 
                             <!--[if (gte mso 9)|(IE)]>
@@ -382,7 +493,38 @@
                             <![endif]-->
 
                             <table class="column" style="border-spacing: 0;vertical-align:top;width:100%;max-width:200px;display:inline-block;" role="presentation">
-                                
+                                <tr>
+                                    <td class="padding" style="padding: 15px;">
+                                    
+                                        <table class="content" style="border-spacing: 0;text-align:center;" role="presentation">
+                                            <tr>
+                                                <td>
+                                                    <a href="https://example.com"><img class="three-col-img-last" src="https://via.placeholder.com/380x280" alt="Placeholder" width="150" style="max-width: 150px;border-radius: 5px;" border="0"></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 10px 10px 20px 10px;">
+                                                    <p style="font-size: 17px;font-weight:bold;line-height: 20px;">LOREM</p>
+                                                    <p style="font-size: 15px;line-height: 20px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, porro dolorum! Incidunt, nulla?</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <table align="center" border="0" cellpadding="0" style="border-spacing: 0;" role="presentation">
+                                                        <tr>
+
+                                                            <td style="border-radius: 10px;" bgcolor="#eff8fe">
+                                                                <a href="https://example.com" target="_blank" style="font-size: 15px;font-weight:bold;text-decoration:none;color:#4d22a2;background-color: #dde0e1;border:1px solid #dde0e1;border-radius: 10px;padding: 8px 20px;display:inline-block;">Example</a>
+                                                            </td>
+
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
                             </table>
 
                             <!--[if (gte mso 9)|(IE)]>
@@ -401,7 +543,12 @@
     <!-- START FOUR COLUMNS -->
                 <tr>
                     <td style="padding:0;">
-                    <table width="100%" style="border-spacing: 0;" role="presentation">
+                    <table width="100%" style="border-spacing: 0;background-color: #f1ebfa;" role="presentation">
+                        <tr>
+                            <td height="2" style="background-color: #b15adc;">
+
+                            </td>
+                        </tr>
                         <tr>
                             <td class="four-columns" style="padding: 0;font-size: 0;text-align:center;">
 
@@ -412,7 +559,19 @@
                             <![endif]-->
 
                             <table class="column" style="border-spacing: 0;vertical-align:top;width:100%;max-width:150px;display:inline-block;" role="presentation">
-                                
+                                <tr>
+                                    <td>
+
+                                        <table class="content" style="border-spacing: 0;text-align:center;Margin-left:15px;" role="presentation">
+                                            <tr>
+                                                <td style="padding: 10px 0 10px 0;">
+                                                    <a href="https://example.com"><img src="https://via.placeholder.com/200x100" alt="Placeholder" width="120" style="max-width: 120px;border-radius:5px;" border="0"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
                             </table>
 
                             <!--[if (gte mso 9)|(IE)]>
@@ -421,7 +580,19 @@
                             <![endif]-->
 
                             <table class="column" style="border-spacing: 0;vertical-align:top;width:100%;max-width:150px;display:inline-block;" role="presentation">
-                                
+                                <tr>
+                                    <td>
+
+                                        <table class="content" style="border-spacing: 0;text-align:center;Margin-left:15px;" role="presentation">
+                                            <tr>
+                                                <td style="padding: 10px 0 10px 0;">
+                                                    <a href="https://example.com"><img src="https://via.placeholder.com/200x100" alt="Placeholder" width="120" style="max-width: 120px;border-radius:5px;" border="0"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
                             </table>
 
                             <!--[if (gte mso 9)|(IE)]>
@@ -430,7 +601,19 @@
                             <![endif]-->
 
                             <table class="column" style="border-spacing: 0;vertical-align:top;width:100%;max-width:150px;display:inline-block;" role="presentation">
-                                
+                                <tr>
+                                    <td>
+
+                                        <table class="content" style="border-spacing: 0;text-align:center;Margin-left:15px;" role="presentation">
+                                            <tr>
+                                                <td style="padding: 10px 0 10px 0;">
+                                                    <a href="https://example.com"><img src="https://via.placeholder.com/200x100" alt="Placeholder" width="120" style="max-width: 120px;border-radius:5px;" border="0"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
                             </table>
 
                             <!--[if (gte mso 9)|(IE)]>
@@ -439,7 +622,19 @@
                             <![endif]-->
 
                             <table class="column" style="border-spacing: 0;vertical-align:top;width:100%;max-width:150px;display:inline-block;" role="presentation">
-                                
+                                <tr>
+                                    <td>
+
+                                        <table class="content" style="border-spacing: 0;text-align:center;Margin-left:15px;" role="presentation">
+                                            <tr>
+                                                <td style="padding: 10px 0 10px 0;">
+                                                    <a href="https://example.com"><img src="https://via.placeholder.com/200x100" alt="Placeholder" width="120" style="max-width: 120px;border-radius:5px;" border="0"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
                             </table>
 
                             <!--[if (gte mso 9)|(IE)]>
@@ -456,9 +651,41 @@
     <!-- END FOUR COLUMNS -->
 
     <!-- START GREEN BOREDER -->
+                <tr>
+                    <td style="padding: 0;">
+                        <table width="100%" style="border-spacing: 0;" role="presentation">
+                            <tr>
+                                <td height="3" style="background-color: #b15adc;"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
     <!-- END GREEN BOREDER -->
 
     <!-- START FOOTER -->
+                <tr>
+                    <td style="padding: 0;background-color:#565656;">
+                        <table width="100%" style="border-spacing: 0;" role="presentation">
+                        
+                            <tr>
+                                <td style="padding: 60px 0 50px 0;color: #ffffff;text-align: center;font-size: 16px;">
+
+                                    <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/751x144" alt="Logo" width="210" border="0"></a>
+                                    <p style="font-size:16px;padding:10px 0 5px 0;">Lorem ipsum dolor sit</p>
+                                    <p style="font-size:16px;padding-bottom:5px;">123 Street Road, City, State 55555</p>
+                                    <p style="font-size:16px;padding-bottom:5px;"><a href="mailto:email@example.com" style="text-decoration: none;color:#f5e8fb;">email@example.com</a></p>
+                                    <p style="font-size:16px;padding-bottom:5px;"><a href="tel:18008888888" style="text-decoration: none;color:#f5e8fb;">1-800-888-8888</a></p>
+                                    <p style="font-size:13px;"><a href="https://example.com" style="text-decoration: none;color:#f5e8fb;">UNSUBSCRIBE</a></p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="4" style="background-color: #b15adc;"></td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
     <!-- END FOOTER -->
 
 
